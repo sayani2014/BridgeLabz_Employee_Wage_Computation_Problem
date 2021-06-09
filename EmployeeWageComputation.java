@@ -13,13 +13,13 @@ public class EmployeeWageComputation {
 			int empCheck = (int)(Math.floor(Math.random() * 10)) % 3;
 			switch(empCheck){
 				case 0:
-                                	break;
+          break;
 				case 1:
-                                	empWage = empWagePerHour * fullDayHour;
+          empWage = empWagePerHour * fullDayHour;
 					amount = amount + empWage;
 					break;
 				case 2:
-                        		empWage = empWagePerHour * parttimeDayHour;
+          empWage = empWagePerHour * parttimeDayHour;
 					amount = amount + empWage;
 					break;
 				default:
