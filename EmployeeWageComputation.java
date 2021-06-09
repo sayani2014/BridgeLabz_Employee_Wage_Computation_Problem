@@ -1,21 +1,17 @@
-import java.util.*;
-import java.lang.Math.*;
-
-public class LineComparisonComputation {
+public class EmployeeWageComputation {
 	public static void main(String args[]) {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the value of x1: ");
-                float x1=sc.nextFloat();
-	        System.out.print("Enter the value of y1: ");
-	        float y1=sc.nextFloat();
-                System.out.print("Enter the value of x2: ");
-	        float x2=sc.nextFloat();
- 		System.out.print("Enter the value of y2: ");
-	        float y2=sc.nextFloat();
-	  	    
-		double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
- 	 	
-		System.out.println("The 2 points of the line are: (" +x1+ "," +y1+ ") and (" +x2+ "," +y2+ ")");	 	    
-  	        System.out.println("Length of the line is: " +distance+ " units.");	
+		int empWagePerHour = 20;
+		int fullDayHour = 8;
+		int empPresent = 1;
+		int empCheck = (int)(Math.floor(Math.random() * 10)) % 2;
+		if (empCheck == empPresent) {
+			System.out.println("Employee is present");
+			int empDailyWage = (empWagePerHour * fullDayHour);
+			System.out.println("Daily wage of the employee is: Rs."+empDailyWage);
+		}
+		else {
+			System.out.println("Employee is absent");
+			System.out.println("Wage of the employee for the day is zero");
+		}
 	}
 }
