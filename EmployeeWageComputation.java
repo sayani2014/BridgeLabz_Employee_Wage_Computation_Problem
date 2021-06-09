@@ -20,12 +20,15 @@ public class EmployeeWageComputation {
 				switch(time)
 				{
 					case 4:
+						int empDailyWagePartTime = (empWagePerHour * time);
+						System.out.println("Daily wage of the employee working parttime is: Rs."+empDailyWagePartTime);
+						break;
+					case 8:
 						int empDailyWageFullTime = (empWagePerHour * time);
 						System.out.println("Daily wage of the employee working fulltime is: Rs."+empDailyWageFullTime);
 						break;
-					case 8:
-						int empDailyWagePartTime = (empWagePerHour * time);
-						System.out.println("Daily wage of the employee working parttime is: Rs."+empDailyWagePartTime);
+					default:
+						System.out.println("Wrong input! Employee Wage cannot be calculated!");
 						break;
 				}
 				break;
