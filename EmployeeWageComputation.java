@@ -3,7 +3,6 @@ import java.util.*;
 public class EmployeeWageComputation {
 	public static void main(String args[]) {
 		int empWagePerHour = 20;
-		int totalWorkingHours = 100;
 		int workingDaysPerMonth = 20;
 		int empAbsent = 0;
 		int empPresentFulltime = 1;
