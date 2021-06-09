@@ -7,7 +7,7 @@ Start with Displaying Welcome to Employee Wage Computation Program on Master Bra
   - Assume Wage per hour is 20
   - Assume full day hour is 8
 3. Add Part time Employee & Wage
-  - Assume Part time Hour is 8
+  - Assume Part time Hour is 4
 4. Solving using Switch Case Statement
 5. Calculating Wages for a Month
   - Assume 20 Working Day per Month
