@@ -5,38 +5,39 @@ public class EmployeeWageComputation {
 		int empWagePerHour = 20;
 		int totalWorkingHours = 100;
 		int workingDaysPerMonth = 20;
-		int time;
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter ");
-		System.out.println("1. To enter the total working hours completed this month"); 
-		System.out.print("      2. To enter the total working days completed this month: ");
-		int value = sc.nextInt();
-		switch(value)
-		{
-			case 1:
-				System.out.print("Enter the number of hours attended in office this month: ");
-				time = sc.nextInt();
-				if (time > totalWorkingHours)
-					System.out.println("Number of hours cannot exceed 100!");
-				else
-				{
-					System.out.println("You were present for " +time+ " hours this month.");
-					int empWage = (empWagePerHour * time);
-					System.out.println("Wages per month of the employee working is: Rs."+empWage);
-				}
-			break;
-			case 2:
-				System.out.print("Enter the number of days attended in office this month: ");
-				time = sc.nextInt();
-				if (time > workingDaysPerMonth)
-					System.out.println("Number of days cannot exceed 20!");
-				else
-				{
-					System.out.println("You were present for " +time+ " days this month.");
-					int empWage = (empWagePerHour * time * 8);
-					System.out.println("Wages per month of the employee working is: Rs."+empWage);
-				}
-			break;
+		int empAbsent = 0;
+		int empPresentFulltime = 1;
+		int empPresentHalftime = 2;
+		int fullDayHour = 8;
+		int parttimeDayHour = 4;
+		int empWage;
+		int amount = 0;
+		int no_of_days = 20;
+		int totalHours = 0;
+		for(int i=1;i<=no_of_days;i++) {
+			int empCheck = (int)(Math.floor(Math.random() * 10)) % 3;
+			switch(empCheck){
+				case 0:
+          				break;
+				case 1:
+          				empWage = empWagePerHour * fullDayHour;
+					amount = amount + empWage;
+					totalHours = totalHours + fullDayHour;
+					if(totalHours >= totalWorkingHours)
+						break;
+					break;
+				case 2:
+         				empWage = empWagePerHour * parttimeDayHour;
+					amount = amount + empWage;
+					totalHours = totalHours + parttimeDayHour;
+					if(totalHours >= totalWorkingHours)
+						break;
+					break;
+				default:
+					System.out.println("Computation Failed! Please check for details!");
+					break;
+			}
 		}
+		System.out.println("Wages per month of the employee is : Rs."+amount);
 	}
 }
