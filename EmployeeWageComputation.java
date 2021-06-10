@@ -41,6 +41,3 @@ public class EmployeeWageComputation {
         System.out.println("Wages per month of the employee is : Rs." +totalEmpWage);
     }
 }
-
-
-
