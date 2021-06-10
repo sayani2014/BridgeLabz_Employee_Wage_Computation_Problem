@@ -14,3 +14,4 @@ public class EmployeeWageComputation {
 			System.out.println("Employee is absent");
 	}
 }
+
