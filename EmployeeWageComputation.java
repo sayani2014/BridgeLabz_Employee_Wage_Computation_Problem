@@ -1,4 +1,4 @@
-/* Calculate Daily Employee Wage using Switch Case
+/* Calculate Daily Employee Wage
  * Working Hour Full Time = 8
  * Working Hour Part Time = 4
  * Wage Per Hour = 20
@@ -11,21 +11,20 @@ public class EmployeeWageComputation {
         public static void main(String args[]) {
             int empWagePerHour = 20;
             int empHour = 0;
+            int empPresentFullDay = 1;
+            int empAbsent = 0;
             int empCheck = (int)(Math.floor(Math.random() * 10)) % 3;
-            switch(empCheck)
-            {
-                case 0:
-                    System.out.println("Employee is absent today");
-                    empHour = 0;
-                    break;
-                case 1:
-                    System.out.println("Employee is present for full time today");
-                    empHour = 8;
-                    break;
-                case 2:
-                    System.out.println("Employee is present for part time today");
-                    empHour = 4;
-                    break;
+            if (empCheck == empPresentFullDay) {
+                System.out.println("Employee is present for full time");
+                empHour = 8;
+            }
+            else if (empCheck == empAbsent) {
+                System.out.println("Employee is absent");
+                empHour = 0;
+            }
+            else {
+                System.out.println("Employee is present for part time");
+                empHour = 4;
             }
             wageCalculation(empWagePerHour, empHour);
         }
@@ -33,5 +32,5 @@ public class EmployeeWageComputation {
             int empDailyWage = (empWagePerHour * empHour);
             System.out.println("Daily wage of the employee is: Rs."+empDailyWage);
         }
-}
+    }
 
