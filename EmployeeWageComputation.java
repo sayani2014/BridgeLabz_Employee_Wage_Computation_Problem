@@ -7,7 +7,7 @@
  * DATE: 10/06/2021
  */
 
-public class SnakeAndLadderProblem {
+public class EmployeeWageComputation {
         public static void main(String args[]) {
             int empWagePerHour = 20;
             int empHour = 0;
