@@ -1,5 +1,6 @@
 # BridgeLabz_Employee_Wage_Computation_Problem
 Start with Displaying Welcome to Employee Wage Computation Program on Master Branch
+
 ## Usecases:
 1. Check Employee is Present or Absent
   - Use ((RANDOM)) for Attendance Check
@@ -13,3 +14,5 @@ Start with Displaying Welcome to Employee Wage Computation Program on Master Bra
   - Assume 20 Working Day per Month
 6. Calculate Wages till a condition of total working hours or days is reached for a month 
   - Assume 100 hours and 20 days
+7. Refactor the Code to write a Class Method to Compute Employee Wage 
+  - Use Class Method and Class Variables
