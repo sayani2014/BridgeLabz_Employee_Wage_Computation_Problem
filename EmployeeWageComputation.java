@@ -1,4 +1,4 @@
-/* Calculate Wages till a condition of total working hours or days is reached for a month
+/* Calculate Wages till a condition of total working hours or days is reached for a month applying the OOPs Concept
  * Total working Hours = 100
  * Working Hour Full Time = 8
  * Working Hour Part Time = 4
@@ -6,7 +6,7 @@
  * Number of Days = 20
  *
  * @author: SAYANI KOLEY
- * DATE: 10/06/2021
+ * @since: 14/06/2021
  */
 
 public class EmployeeWageComputation {
@@ -18,6 +18,16 @@ public class EmployeeWageComputation {
     public static final int hours_in_month = 100;
 
     public static void main(String args[]) {
+        //Calculation of total working hours of the employee
+        int calculatedTotalWorkingHours = calculateWorkinghours();
+
+        //Calculation of the total wages of the employee
+        int totalEmpWage = totalEmpWage(calculatedTotalWorkingHours);
+
+        //Print the total wage
+        System.out.println("Wages per month of the employee is : Rs." +totalEmpWage);
+    }
+    private static int calculateWorkinghours() {
         int empHour = 0;
         int totalWorkingHours = 0;
         for(int i=1;i<=no_of_days;i++) {
@@ -37,7 +47,11 @@ public class EmployeeWageComputation {
             if(totalWorkingHours >= hours_in_month)
                 break;
         }
+        return totalWorkingHours;
+    }
+    private static int totalEmpWage(int totalWorkingHours) {
         int totalEmpWage = (empWagePerHour * totalWorkingHours);
-        System.out.println("Wages per month of the employee is : Rs." +totalEmpWage);
+        return totalEmpWage;
     }
 }
+
