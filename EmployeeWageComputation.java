@@ -1,45 +1,30 @@
-/* Calculate Wages till a condition of total working hours or days is reached for a month applying the OOPs Concept
- * Total working Hours = 100
- * Working Hour Full Time = 8
- * Working Hour Part Time = 4
- * Wage Per Hour = 20
- * Number of Days = 20
+/**
+ * Compute Employee Wage for multiple companies
+ * Note: Each Company has its own wage, number of working days and working hours per month
+ * Use Class Method with function parameters instead of Class Variables
  *
  * @author: SAYANI KOLEY
- * @since: 14/06/2021
+ * @since: 15/06/2021
  */
 
-public class EmployeeWageComputation {
-    public static final int absent = 0;
-    public static final int fullTime = 1;
-    public static final int partTime = 2;
-    public static final int no_of_days = 20;
-    public static final int empWagePerHour = 20;
-    public static final int hours_in_month = 100;
+class WageCalculation {
+    public static final int ABSENT = 0;
+    public static final int FULLTIME = 1;
+    public static final int PARTTIME = 2;
 
-    public static void main(String args[]) {
-        //Calculation of total working hours of the employee
-        int calculatedTotalWorkingHours = calculateWorkinghours();
-
-        //Calculation of the total wages of the employee
-        int totalEmpWage = totalEmpWage(calculatedTotalWorkingHours);
-
-        //Print the total wage
-        System.out.println("Wages per month of the employee is : Rs." +totalEmpWage);
-    }
-    private static int calculateWorkinghours() {
+    public int calculateWorkinghours(int no_of_days, int hours_in_month) {
         int empHour = 0;
         int totalWorkingHours = 0;
         for(int i=1;i<=no_of_days;i++) {
             int empCheck = (int) (Math.floor(Math.random() * 10)) % 3;
             switch (empCheck) {
-                case absent:
+                case ABSENT:
                     empHour = 0;
                     break;
-                case fullTime:
+                case FULLTIME:
                     empHour = 8;
                     break;
-                case partTime:
+                case PARTTIME:
                     empHour = 4;
                     break;
             }
@@ -47,11 +32,30 @@ public class EmployeeWageComputation {
             if(totalWorkingHours >= hours_in_month)
                 break;
         }
+        //System.out.println(totalWorkingHours);
         return totalWorkingHours;
     }
-    private static int totalEmpWage(int totalWorkingHours) {
+    public void totalEmpWage(String companyName, int totalWorkingHours,  int empWagePerHour) {
         int totalEmpWage = (empWagePerHour * totalWorkingHours);
-        return totalEmpWage;
+        System.out.println("Wages per month of the employee working in " + companyName + " is : Rs." +totalEmpWage);
+    }
+}
+
+public class EmployeeWageComputation {
+    public static void main(String args[]) {
+        //Create object for DMart
+        WageCalculation wageCalculateDMart = new WageCalculation();
+        //Calculation of total working hours of the employee working in DMart
+        int calculatedTotalWorkingHoursDMart = wageCalculateDMart.calculateWorkinghours(20,  100);
+        //Calculation of the total wages of the employee working in DMart
+        wageCalculateDMart.totalEmpWage("DMart", calculatedTotalWorkingHoursDMart, 30);
+
+        //Create object for Reliance Retails
+        WageCalculation wageCalculateReliance = new WageCalculation();
+        //Calculation of total working hours of the employee working in Reliance Retails
+        int calculatedTotalWorkingHoursReliance = wageCalculateDMart.calculateWorkinghours(30,  150);
+        //Calculation of the total wages of the employee working in Reliance Retails
+        wageCalculateDMart.totalEmpWage("Reliance Retails", calculatedTotalWorkingHoursReliance, 20);
     }
 }
 
