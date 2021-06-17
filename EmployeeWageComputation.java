@@ -53,9 +53,9 @@ public class EmployeeWageComputation {
         //Create object for Reliance Retails
         WageCalculation wageCalculateReliance = new WageCalculation();
         //Calculation of total working hours of the employee working in Reliance Retails
-        int calculatedTotalWorkingHoursReliance = wageCalculateDMart.calculateWorkinghours(30,  150);
+        int calculatedTotalWorkingHoursReliance = wageCalculateReliance.calculateWorkinghours(30,  150);
         //Calculation of the total wages of the employee working in Reliance Retails
-        wageCalculateDMart.totalEmpWage("Reliance Retails", calculatedTotalWorkingHoursReliance, 20);
+        wageCalculateReliance.totalEmpWage("Reliance Retails", calculatedTotalWorkingHoursReliance, 20);
     }
 }
 
