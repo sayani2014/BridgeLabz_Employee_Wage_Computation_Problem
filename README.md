@@ -16,3 +16,8 @@ Start with Displaying Welcome to Employee Wage Computation Program on Master Bra
   - Assume 100 hours and 20 days
 7. Refactor the Code to write a Class Method to Compute Employee Wage 
   - Use Class Method and Class Variables
+8. Compute Employee Wage for multiple companies - Note: Each Company has its own wage, number of working days and working hours per month
+  - Use Class Method with function parameters instead of Class Variables
+9. Ability to save the Total Wage for Each Company
+10. Ability to manage Employee Wage of multiple companies using Interface approach and using ArrayList. Ability to get the Total Wage when queried by Company
+  
